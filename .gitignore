@@ -1,0 +1,13 @@
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+
+### Zig template
+.zig-cache/
+zig-out/
+zig-cache/
+build/
+build-*/
+docgen_tmp/
