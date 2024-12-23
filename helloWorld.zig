@@ -2,7 +2,7 @@ const std = @import("std");
 
 pub fn main() !void {
     for (0..10) |value| {
-        printLn("{d}: Hello world!",.{value});
+        printLn("{d}: Hello world!", .{value});
     }
 }
 

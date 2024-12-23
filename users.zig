@@ -20,17 +20,14 @@ pub fn main() !void {
         printLn("Print name of user:", .{});
         const name = try getName(&allocator);
 
-        printLn("Print age of user:",.{});
+        printLn("Print age of user:", .{});
         const age = try getAge(&allocator);
 
-        const user = User {
-            .name = name,
-            .age=  age
-        };
+        const user = User{ .name = name, .age = age };
 
         try users.append(user);
 
-        printLn("New User! Name - {s}, age - {d}", .{user.name, user.age});
+        printLn("New User! Name - {s}, age - {d}", .{ user.name, user.age });
 
         const users_items = users.items;
 
@@ -40,12 +37,12 @@ pub fn main() !void {
 
         printLn("All old users:", .{});
         var index: usize = 1;
-        for (users_items[0..users_items.len-1]) |value| {
-            printLn("User {d}: Name - {s}, age - {d}", .{index, value.name, value.age});
+        for (users_items[0 .. users_items.len - 1]) |value| {
+            printLn("User {d}: Name - {s}, age - {d}", .{ index, value.name, value.age });
             index += 1;
         }
 
-        printLn("",.{});
+        printLn("", .{});
     }
 }
 
@@ -80,4 +77,3 @@ pub fn readLine(allocator: *const std.mem.Allocator) ![]u8 {
     const buffer = stdin.readUntilDelimiterAlloc(allocator.*, '\n', 1024);
     return buffer;
 }
-
