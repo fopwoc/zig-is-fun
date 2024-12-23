@@ -21,7 +21,7 @@ pub fn main() void {
     defer ray.CloseWindow();
 
     // Load bunny texture
-    const tex_bunny = ray.LoadTexture("./wabbit_alpha.png");
+    const tex_bunny = ray.LoadTexture("./bunnymark/wabbit_alpha.png");
     defer ray.UnloadTexture(tex_bunny);
 
     var gpa = std.heap.GeneralPurposeAllocator(.{}){};
